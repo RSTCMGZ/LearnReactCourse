@@ -1,4 +1,6 @@
-import styles from "./App.module.css";
+// import styles from "./App.module.css";
+import { User } from "./User"
+
 
 // function App() {
 //   return (
@@ -66,9 +68,11 @@ function App() {
     { name: "mehmet", age: 35 },
   ];
 
-  return <div className={styles.App}><h1>
+  return <div className="App"><h1>
     {users.map((user, key) => {
-      return <div>{user.name} {user.age}</div>
+      // return <div>{user.name} {user.age}</div>
+
+      return <User name={user.name} age={user.age} />
     })}
 
   </h1></div>
