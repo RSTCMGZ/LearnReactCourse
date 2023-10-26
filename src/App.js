@@ -1,7 +1,7 @@
-// import styles from "./App.module.css";
+import "./App.css";
 // import { User } from "./User"
+import { useState } from "react"
 
-import { useState } from "react";
 
 
 // function App() {
@@ -80,16 +80,46 @@ import { useState } from "react";
 //   </h1></div>
 // }
 //! Exaple 4
-function App() {
-  let age = 0
+// function App() {
+//   const [age, setAge] = useState(0)
+//   const increaseAge = () => {
+//     setAge(age + 1)
+//   }
+//   return <div className="App">
+//     {age}
+//     <button onClick={increaseAge}>Increase Age</button>
+//   </div>
+// }
+//! Exaple 5
+// function App() {
+//   const [inputValue, setInputValue] = useState("")
 
-  const increaseAge = () => {
-    age = age + 1
-  }
+//   const handleInputChange = (event) => {
+//     setInputValue(event.target.value)
+//   }
+//   return <div className="App">
+//     <input type="text" onChange={handleInputChange} /> <br />
+//     {inputValue}
+//   </div>
+// }
+//! Exaple 6
+// function App() {
+//   const [showText, setShowText] = useState(true)
+
+
+//   return <div className="App">
+//     <button onClick={() => setShowText(!showText)}>Show/Hide</button>
+//     {showText && <h1>Hello My Name İs Reso</h1>}
+//   </div>
+// }
+//! Exaple 7
+function App() {
+  const [textColor, setTextColor] = useState("black")
+
+
   return <div className="App">
-    {age}
-    <button onClick={increaseAge}>Increase Age</button>
+    <button onClick={() => { setTextColor(textColor === "black" ? "red" : "black") }}>Show/Hide</button>
+    <h1 style={{ color: textColor }}>Hello My Name İs Reso</h1>
   </div>
 }
-
 export default App;
