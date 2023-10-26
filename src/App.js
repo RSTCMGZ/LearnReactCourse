@@ -1,5 +1,7 @@
 // import styles from "./App.module.css";
-import { User } from "./User"
+// import { User } from "./User"
+
+import { useState } from "react";
 
 
 // function App() {
@@ -61,22 +63,33 @@ import { User } from "./User"
 // }
 //! Example 3
 
+// function App() {
+//   const users = [
+//     { name: "reso", age: 27 },
+//     { name: "ahmet", age: 29 },
+//     { name: "mehmet", age: 35 },
+//   ];
+
+//   return <div className="App"><h1>
+//     {users.map((user, key) => {
+//       // return <div>{user.name} {user.age}</div>
+
+//       return <User name={user.name} age={user.age} />
+//     })}
+
+//   </h1></div>
+// }
+//! Exaple 4
 function App() {
-  const users = [
-    { name: "reso", age: 27 },
-    { name: "ahmet", age: 29 },
-    { name: "mehmet", age: 35 },
-  ];
+  let age = 0
 
-  return <div className="App"><h1>
-    {users.map((user, key) => {
-      // return <div>{user.name} {user.age}</div>
-
-      return <User name={user.name} age={user.age} />
-    })}
-
-  </h1></div>
+  const increaseAge = () => {
+    age = age + 1
+  }
+  return <div className="App">
+    {age}
+    <button onClick={increaseAge}>Increase Age</button>
+  </div>
 }
-
 
 export default App;
