@@ -6,10 +6,13 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <div>
+    {/* <React.StrictMode> */}
     <App />
     {/* <Excercise /> */}
     {/* <Planets /> */}
-  </React.StrictMode>
+    {/* </React.StrictMode> */}
+  </div>
+
 );
 
