@@ -113,13 +113,15 @@ import { useState } from "react"
 //   </div>
 // }
 //! Exaple 7
-function App() {
-  const [textColor, setTextColor] = useState("black")
+// function App() {
+//   const [textColor, setTextColor] = useState("black")
 
 
-  return <div className="App">
-    <button onClick={() => { setTextColor(textColor === "black" ? "red" : "black") }}>Show/Hide</button>
-    <h1 style={{ color: textColor }}>Hello My Name İs Reso</h1>
-  </div>
-}
+//   return <div className="App">
+//     <button onClick={() => { setTextColor(textColor === "black" ? "red" : "black") }}>Show/Hide</button>
+//     <h1 style={{ color: textColor }}>Hello My Name İs Reso</h1>
+//   </div>
+// }
+//! Exaple 8
+
 export default App;
