@@ -1,8 +1,16 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 // import { User } from "./User"
-import { useState } from "react"
+// import { useState } from "react"
 // import { Task } from "./Task"
-import { Text } from "./Text"
+// import { Text } from "./Text"
+import { Home } from "./pages/Home";
+import { Contact } from "./pages/Contact";
+import { Navbar } from "./Navbar";
+import { useState, createContext } from "react";
+import { Profile } from "./pages/Profile";
+
+export const AppContext = createContext()
 
 
 
@@ -145,8 +153,7 @@ import { Text } from "./Text"
 //     setTodoList(todoList.filter((task) => task.id !== id))
 //   }
 //   const completeTask = (id) => {
-//     setTodoList(
-//       todoList.map((task) => {
+//     setTodoList(     todoList.map((task) => {
 //         if (task.id === id) {
 //           return { ...task, completed: true }
 //         } else {
@@ -172,16 +179,57 @@ import { Text } from "./Text"
 //   )
 // }
 //! Exaple 9
-function App() {
-  const [showText, setShowText] = useState(false)
+// function App() {
+//   const [showText, setShowText] = useState(false)
 
+
+//   return (<div className="App">
+//     <button onClick={() => { setShowText(!showText) }}>
+//       Show Text
+//     </button>
+//     {showText && <Text />}
+//   </div>
+// )
+//}
+// ! Exaple 10
+function App() {
+  const [username, setUsername] = useState("Reso")
 
   return (<div className="App">
-    <button onClick={() => { setShowText(!showText) }}>
-      Show Text
-    </button>
-    {showText && <Text />}
+    <AppContext.Provider value={{ username, setUsername }}>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home username={username} />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
+        </Routes>
+      </Router>
+    </AppContext.Provider>
   </div>
   )
 }
+//! Example 11
+// const App = () => {
+//   const [state, setState] = useState()
+
+
+//   return (<div className="App">
+//     <MiddleComponent state={state} />
+//   </div>
+//   )
+// }
+
+// const MiddleComponent = (state) => {
+//   return (
+//     <div>
+//       <BottomComponent state={state} />
+//     </div>
+//   )
+// }
+
+// const BottomComponent = (state) => {
+//   return <div>{state}</div>
+// }
 export default App;
