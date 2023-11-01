@@ -1,5 +1,6 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 // import { User } from "./User"
 // import { useState } from "react"
 // import { Task } from "./Task"
@@ -7,9 +8,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import { Home } from "./pages/Home";
 import { Contact } from "./pages/Contact";
 import { Navbar } from "./Navbar";
-import { useState, createContext } from "react";
+import { createContext } from "react";
 import { Profile } from "./pages/Profile";
-
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 export const AppContext = createContext()
 
 
@@ -192,20 +193,24 @@ export const AppContext = createContext()
 // )
 //}
 // ! Exaple 10
-function App() {
-  return (<div className="App">
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
-      </Routes>
-    </Router>
-  </div>
-  )
-}
+// function App() {
+//   const [username, setUsername] = useState("Reso")
+
+//   return (<div className="App">
+//     <AppContext.Provider value={{ username, setUsername }}>
+//       <Router>
+//         <Navbar />
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/profile" element={<Profile />} />
+//           <Route path="/contact" element={<Contact />} />
+//           <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
+//         </Routes>
+//       </Router>
+//     </AppContext.Provider>
+//   </div>
+//   )
+// }
 //! Example 11
 // const App = () => {
 //   const [state, setState] = useState()
@@ -227,5 +232,34 @@ function App() {
 
 // const BottomComponent = (state) => {
 //   return <div>{state}</div>
+// }
+
+
+// ! Exaple 12
+// function App() {
+//   const client = new QueryClient({
+//     defaultOptions: {
+//       queries: {
+//         refetchOnWindowFocus: false,
+
+//       },
+//     },
+//   })
+
+//   return (
+//     <div className="App">
+//       <QueryClientProvider client={client}>
+//         <Router>
+//           <Navbar />
+//           <Routes>
+//             <Route path="/" element={<Home />} />
+//             <Route path="/profile" element={<Profile />} />
+//             <Route path="/contact" element={<Contact />} />
+//             <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
+//           </Routes>
+//         </Router>
+//       </QueryClientProvider>
+//     </div>
+//   )
 // }
 export default App;

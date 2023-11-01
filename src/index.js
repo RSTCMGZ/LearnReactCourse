@@ -7,11 +7,11 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
-    {/* <React.StrictMode> */}
-    <App />
-    {/* <Excercise /> */}
-    {/* <Planets /> */}
-    {/* </React.StrictMode> */}
+    <React.StrictMode>
+      <App />
+      {/* <Excercise /> */}
+      {/* <Planets /> */}
+    </React.StrictMode>
   </div>
 
 );
