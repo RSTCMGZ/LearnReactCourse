@@ -1,17 +1,18 @@
 import "./App.css";
 // import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+// import { BrowserRouter as Router, Routes, Route, Form } from "react-router-dom"
 // import { User } from "./User"
 // import { useState } from "react"
 // import { Task } from "./Task"
 // import { Text } from "./Text"
-import { Home } from "./pages/Home";
-import { Contact } from "./pages/Contact";
-import { Navbar } from "./Navbar";
-import { createContext } from "react";
-import { Profile } from "./pages/Profile";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-export const AppContext = createContext()
+// import { Home } from "./pages/Home";
+// import { Contact } from "./pages/Contact";
+// import { Navbar } from "./Navbar";
+// import { createContext } from "react";
+// import { Profile } from "./pages/Profile";
+// import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+// export const AppContext = createContext()
+import { Form } from "./pages/Form"
 
 
 
@@ -262,4 +263,14 @@ export const AppContext = createContext()
 //     </div>
 //   )
 // }
+// ! Exaple 13
+function App() {
+
+
+    return (
+        <div className="App">
+            <Form />
+        </div>
+    )
+}
 export default App;
