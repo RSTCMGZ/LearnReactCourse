@@ -1,4 +1,4 @@
-import { useContext, userContext } from "react"
+import { useContext } from "react"
 import { AppContext } from "../App"
 
 export const Home = () => {
