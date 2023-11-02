@@ -1,6 +1,8 @@
 import { useState, useContext, useEffect } from "react";
 import "./App.css";
-import { useToggle } from "./useToggle";
+// import { useToggle } from "./useToggle";
+// import { Cat } from "./Cat";
+import { useCount } from "./useCount";
 // import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 // import { BrowserRouter as Router, Routes, Route, Form } from "react-router-dom"
 // import { User } from "./User"
@@ -265,16 +267,29 @@ import { useToggle } from "./useToggle";
 //     </div>
 //   )
 // }
+// //! Exaple 13
+// function App() {
+//     const { state: isVisible, toggle } = useToggle()
+//     return (
+//         <div className="App">
+//             <button onClick={toggle} >
+
+//                 {isVisible ? "Hide" : "Show"}
+//             </button>
+//             {isVisible && <h1>Hidden text</h1>}
+//         </div>
+//     )
+// }
+
 //! Exaple 13
 function App() {
-    const { state: isVisible, toggle } = useToggle()
+    const { count, increase, decrease, restart } = useCount()
     return (
         <div className="App">
-            <button onClick={toggle} >
-
-                {isVisible ? "Hide" : "Show"}
-            </button>
-            {isVisible && <h1>Hidden text</h1>}
+            {count}
+            <button onClick={increase}>increase</button>
+            <button onClick={decrease}>decrease</button>
+            <button onClick={restart}>restart</button>
         </div>
     )
 }
