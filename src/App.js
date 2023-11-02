@@ -1,3 +1,4 @@
+import { useState, useContext, useEffect } from "react";
 import "./App.css";
 // import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 // import { BrowserRouter as Router, Routes, Route, Form } from "react-router-dom"
@@ -12,7 +13,7 @@ import "./App.css";
 // import { Profile } from "./pages/Profile";
 // import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 // export const AppContext = createContext()
-import { Form } from "./pages/Form"
+// import { Form } from "./pages/Form"
 
 
 
@@ -263,13 +264,17 @@ import { Form } from "./pages/Form"
 //     </div>
 //   )
 // }
-// ! Exaple 13
+//! Exaple 13
 function App() {
-
+    const [isVisible, setIsVisible] = useState(false)
 
     return (
         <div className="App">
-            <Form />
+            <button onClick={() => setIsVisible((prev) => !prev)} >
+
+                {isVisible ? "Hide" : "Show"}
+            </button>
+            {isVisible && <h1>Hidden text</h1>}
         </div>
     )
 }
