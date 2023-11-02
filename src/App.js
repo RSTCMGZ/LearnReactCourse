@@ -1,5 +1,6 @@
 import { useState, useContext, useEffect } from "react";
 import "./App.css";
+import { useToggle } from "./useToggle";
 // import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 // import { BrowserRouter as Router, Routes, Route, Form } from "react-router-dom"
 // import { User } from "./User"
@@ -266,11 +267,10 @@ import "./App.css";
 // }
 //! Exaple 13
 function App() {
-    const [isVisible, setIsVisible] = useState(false)
-
+    const { state: isVisible, toggle } = useToggle()
     return (
         <div className="App">
-            <button onClick={() => setIsVisible((prev) => !prev)} >
+            <button onClick={toggle} >
 
                 {isVisible ? "Hide" : "Show"}
             </button>
