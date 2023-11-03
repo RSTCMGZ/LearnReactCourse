@@ -1,5 +1,7 @@
 import { useState, useContext, useEffect } from "react";
 import "./App.css";
+import { Person } from "./Person.js"
+
 // import { useToggle } from "./useToggle";
 // import { Cat } from "./Cat";
 import { useCount } from "./useCount";
@@ -282,14 +284,30 @@ import { useCount } from "./useCount";
 // }
 
 //! Exaple 13
+// function App() {
+//     const { count, increase, decrease, restart } = useCount()
+//     return (
+//         <div className="App">
+//             {count}
+//             <button onClick={increase}>increase</button>
+//             <button onClick={decrease}>decrease</button>
+//             <button onClick={restart}>restart</button>
+//         </div>
+//     )
+// }
+//! Exaple 14
 function App() {
-    const { count, increase, decrease, restart } = useCount()
+
+    const name = "Reso"
     return (
         <div className="App">
-            {count}
-            <button onClick={increase}>increase</button>
-            <button onClick={decrease}>decrease</button>
-            <button onClick={restart}>restart</button>
+            <Person
+                name="Reso"
+                email="reso@reso.com"
+                age={27}
+                isMarried={false}
+                friends={["mehmet", "ayse", "ahmet"]}
+            />
         </div>
     )
 }
