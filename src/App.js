@@ -298,7 +298,6 @@ import { useCount } from "./useCount";
 //! Exaple 14
 function App() {
 
-    const name = "Reso"
     return (
         <div className="App">
             <Person
