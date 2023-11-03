@@ -242,7 +242,7 @@ import { useCount } from "./useCount";
 // }
 
 
-// ! Exaple 12
+// ! Example 12
 // function App() {
 //   const client = new QueryClient({
 //     defaultOptions: {
@@ -269,7 +269,7 @@ import { useCount } from "./useCount";
 //     </div>
 //   )
 // }
-// //! Exaple 13
+// //! Example 13
 // function App() {
 //     const { state: isVisible, toggle } = useToggle()
 //     return (
@@ -283,7 +283,7 @@ import { useCount } from "./useCount";
 //     )
 // }
 
-//! Exaple 13
+//! Example 13
 // function App() {
 //     const { count, increase, decrease, restart } = useCount()
 //     return (
@@ -295,18 +295,28 @@ import { useCount } from "./useCount";
 //         </div>
 //     )
 // }
-//! Exaple 14
+// //! Example 14
+// function App() {
+
+//     return (
+//         <div className="App">
+//             <Person
+//                 name="Reso"
+//                 email="reso@reso.com"
+//                 age={27}
+//                 isMarried={false}
+//                 friends={["mehmet", "ayse", "ahmet"]}
+//             />
+//         </div>
+//     )
+// }
+
+//! Example 15
 function App() {
 
     return (
         <div className="App">
-            <Person
-                name="Reso"
-                email="reso@reso.com"
-                age={27}
-                isMarried={false}
-                friends={["mehmet", "ayse", "ahmet"]}
-            />
+
         </div>
     )
 }
