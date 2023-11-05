@@ -6,13 +6,13 @@ import { Person } from "./Person.js"
 // import { Cat } from "./Cat";
 import { useCount } from "./useCount";
 // import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
-// import { BrowserRouter as Router, Routes, Route, Form } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Form } from "react-router-dom"
 // import { User } from "./User"
 // import { useState } from "react"
 // import { Task } from "./Task"
 // import { Text } from "./Text"
-// import { Home } from "./pages/Home";
-// import { Contact } from "./pages/Contact";
+import { Home } from "./pages/Home";
+import { Contact } from "./pages/Contact";
 // import { Navbar } from "./Navbar";
 // import { createContext } from "react";
 // import { Profile } from "./pages/Profile";
@@ -311,12 +311,27 @@ import { useCount } from "./useCount";
 //     )
 // }
 
-//! Example 15
+// //! Example 15
+// function App() {
+
+//     return (
+//         <div className="App">
+
+//         </div>
+//     )
+// }
+//! Example 16
 function App() {
 
     return (
         <div className="App">
-
+            <Router>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/contact" element={<Contact />} />
+                </Routes>
+            </Router>
         </div>
     )
 }
